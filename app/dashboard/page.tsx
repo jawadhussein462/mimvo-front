@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Demo dashboard",
   description:
     "Interactive Mimvo demo: browse a sample scan of an AI agent's long-term memory, or open your own mimvo --json report in the browser.",
+  alternates: { canonical: "/dashboard" },
 };
 
 export default function DashboardPage() {

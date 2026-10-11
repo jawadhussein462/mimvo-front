@@ -3,6 +3,8 @@ const repo = "https://github.com/jawadhussein462/mimvo";
 export const site = {
   name: "Mimvo",
   tagline: "Security scanner for AI agent memory.",
+  description:
+    "Scan your AI agent's long-term memory for poisoned facts, hidden instructions, and leaked secrets. Open source, read-only, offline by default.",
   url: "https://mimvo.dev",
   github: repo,
   /** "Try open source" lands on the docs, and the docs lead to GitHub (the promptfoo pattern). */
@@ -20,6 +22,12 @@ export const site = {
   pypi: "https://pypi.org/project/mimvo/",
   install: "pip install mimvo",
   license: "Apache-2.0",
+  /**
+   * Google Search Console ownership token (HTML tag method). Rendered as
+   * <meta name="google-site-verification"> on every page; keep it deployed
+   * after verifying, or Search Console drops the ownership.
+   */
+  googleSiteVerification: "yWxki1Pz9Y3XrLq1BHs1qTc77i_KuAiG_jqEzCTRfP0",
 };
 
 /** Link to a file in the package repo on GitHub. */

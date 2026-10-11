@@ -75,6 +75,20 @@ no requests to Google. Builds therefore need network access once.
 - **Social preview.** `app/opengraph-image.png` is used for link previews. Upload `public/brand/mimvo-social-dark.png`
   as the GitHub social preview too (Settings → General → Social preview).
 
+## Search engines
+
+- **Google Search Console** is verified with the HTML-tag method: `site.googleSiteVerification` in `lib/site.ts` is
+  rendered as `<meta name="google-site-verification">` on every page. Keep it deployed, or the property loses its
+  verified status.
+- `/robots.txt` (`app/robots.ts`) allows everything except `/api/` and points to the sitemap.
+- `/sitemap.xml` (`app/sitemap.ts`) lists the pages. **Add a line there when you add a page**, and give the page an
+  `alternates.canonical` in its `metadata`.
+- The home page carries schema.org JSON-LD (`lib/structured-data.ts`): the site and Mimvo as a free, open-source
+  `SoftwareApplication`, linked to GitHub and PyPI.
+
+After deploying: in Search Console click **Verify**, submit `https://mimvo.dev/sitemap.xml` under **Sitemaps**, and
+use **URL inspection → Request indexing** on the home page and `/docs`.
+
 ## Brand assets
 
 `public/brand/` holds the logo and banners, also served at `mimvo.dev/brand/…`:

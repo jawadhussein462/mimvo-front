@@ -20,8 +20,7 @@ const mono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const description =
-  "Scan your AI agent's long-term memory for poisoned facts, hidden instructions, and leaked secrets. Open source, read-only, offline by default.";
+const description = site.description;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -31,6 +30,8 @@ export const metadata: Metadata = {
   },
   description,
   applicationName: "Mimvo",
+  robots: { index: true, follow: true },
+  verification: { google: site.googleSiteVerification },
   keywords: ["AI agent memory", "memory poisoning", "prompt injection", "secret scanning", "RAG security", "vector database"],
   openGraph: {
     type: "website",
