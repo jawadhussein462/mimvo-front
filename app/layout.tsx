@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -61,7 +62,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* Marks the page as scripted before paint, so scroll reveals can start hidden without a flash. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>
-      <body className="min-h-screen bg-background font-sans text-foreground antialiased">{children}</body>
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
