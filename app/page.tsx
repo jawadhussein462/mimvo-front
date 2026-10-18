@@ -10,10 +10,10 @@ import { OpenSource } from "@/components/landing/open-source";
 import { FinalCta } from "@/components/landing/final-cta";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { homeStructuredData, jsonLd } from "@/lib/structured-data";
+import { pageMetadata } from "@/lib/seo";
+import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/" },
-};
+export const metadata: Metadata = pageMetadata({ title: null, description: site.description, path: "/" });
 
 export default function HomePage() {
   return (

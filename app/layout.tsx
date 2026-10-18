@@ -21,30 +21,47 @@ const mono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const description = site.description;
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Mimvo · Security scanner for AI agent memory",
+    default: site.title,
     template: "%s · Mimvo",
   },
-  description,
-  applicationName: "Mimvo",
-  robots: { index: true, follow: true },
+  description: site.description,
+  applicationName: site.name,
+  authors: [{ name: "Mimvo", url: site.url }],
+  creator: "Mimvo",
+  robots: {
+    index: true,
+    follow: true,
+    // Let Google show full-size image previews and full snippets in results.
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
   verification: { google: site.googleSiteVerification },
-  keywords: ["AI agent memory", "memory poisoning", "prompt injection", "secret scanning", "RAG security", "vector database"],
+  keywords: [
+    "AI agent memory",
+    "AI agent security",
+    "memory poisoning",
+    "RAG poisoning",
+    "prompt injection",
+    "secret scanning",
+    "RAG security",
+    "vector database security",
+    "LLM security",
+  ],
+  // Per-page Open Graph and Twitter tags come from pageMetadata() in lib/seo.ts.
   openGraph: {
     type: "website",
-    url: site.url,
-    siteName: "Mimvo",
-    title: "Mimvo · Security scanner for AI agent memory",
-    description,
+    url: "/",
+    siteName: site.name,
+    locale: "en_US",
+    title: site.title,
+    description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mimvo · Security scanner for AI agent memory",
-    description,
+    title: site.title,
+    description: site.description,
   },
 };
 

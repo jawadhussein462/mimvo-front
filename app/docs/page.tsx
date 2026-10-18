@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { DocsContent } from "@/components/docs/content";
 import { DocsShell } from "@/components/docs/docs-shell";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { SiteHeader } from "@/components/landing/site-header";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Docs",
   description:
-    "Install Mimvo from PyPI, scan Chroma, Qdrant, pgvector, Pinecone, LangChain, mem0 or JSONL memory, and read the findings. Open source, read-only, offline by default.",
-  alternates: { canonical: "/docs" },
-};
+    "Mimvo docs: install from PyPI, scan Chroma, Qdrant, pgvector, Pinecone, LangChain, mem0 or JSONL agent memory, gate CI with SARIF, and read the findings.",
+  path: "/docs",
+});
 
 export default function DocsPage() {
   return (

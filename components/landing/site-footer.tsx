@@ -13,6 +13,7 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
       { label: "Overview", href: "/#product" },
       { label: "What it finds", href: "/#scanners" },
       { label: "How it works", href: "/#how" },
+      { label: "Integrations", href: "/integrations" },
       { label: "Live dashboard", href: "/dashboard" },
       { label: "Book a demo", href: site.demo },
     ],
@@ -26,6 +27,7 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
       { label: "Finding codes", href: site.rulesDocs },
       { label: "Use in CI", href: "/docs#use-in-ci" },
       { label: "Python API", href: "/docs#python-api" },
+      { label: "Memory poisoning guide", href: "/learn/ai-agent-memory-poisoning" },
     ],
   },
   {

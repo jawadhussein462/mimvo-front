@@ -19,12 +19,19 @@
 - `/`: landing page. Two calls to action, as on most open-source startups' sites: **Book a demo** (`/demo`) and
   **Try open source** (`/docs`), and the docs lead on to GitHub.
 - `/docs`: documentation, ported from the package README. Install steps use PyPI (`pip install mimvo`).
+- `/integrations`, `/integrations/<store>`: one page per memory store Mimvo scans (Chroma, Qdrant, pgvector,
+  Pinecone, LangChain / LangGraph, mem0, JSONL), built from `lib/catalog.ts` and the copy in `lib/integrations.ts`.
+- `/learn`, `/learn/ai-agent-memory-poisoning`: guides that answer what people search for.
 - `/demo`: demo request form. Submitting it emails `site.contactEmail` (`/api/demo`).
 - `/dashboard`: interactive dashboard. It opens on a sample scan, and it opens **your own report**: run
   `mimvo scan ... --json findings.json`, then use **Open report** (or drop the file on the page). The file is parsed in
   the browser and never uploaded.
 
 There is no backend, no authentication, and no network request at runtime.
+
+**SEO.** Every page builds its metadata with `pageMetadata()` (`lib/seo.ts`), so the title, description, canonical
+URL and Open Graph / Twitter tags agree. JSON-LD lives in `lib/structured-data.ts`. When you add a page, add it to
+`PAGES` in `app/sitemap.ts`.
 
 ## Compatibility with the mimvo package
 
