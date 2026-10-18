@@ -1,8 +1,13 @@
+import Link from "next/link";
 import { StoreChip } from "@/components/security/store-glyph";
 import { STORE_ORDER } from "@/lib/catalog";
+import { INTEGRATIONS, integrationPath } from "@/lib/integrations";
 import { Reveal } from "./reveal";
 
-/** The "works with" strip under the hero: the stores Mimvo reads, in place of a customer-logo wall. */
+/**
+ * The "works with" strip under the hero: the stores Mimvo reads, in place of a customer-logo wall.
+ * Each chip links to that store's integration page.
+ */
 export function StoresStrip() {
   return (
     <section aria-labelledby="stores-title" className="border-y bg-card/50">
@@ -13,7 +18,13 @@ export function StoresStrip() {
         <ul className="flex flex-wrap justify-center gap-2 lg:justify-end">
           {STORE_ORDER.map((id) => (
             <li key={id}>
-              <StoreChip store={id} />
+              <Link
+                href={integrationPath(id)}
+                aria-label={`Scan ${INTEGRATIONS[id].title} with Mimvo`}
+                className="block rounded-md transition-opacity hover:opacity-75"
+              >
+                <StoreChip store={id} />
+              </Link>
             </li>
           ))}
         </ul>

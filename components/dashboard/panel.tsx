@@ -35,16 +35,19 @@ export function PageHeading({
   description,
   actions,
   className,
+  as: Heading = "h1",
 }: {
   title: ReactNode;
   description?: ReactNode;
   actions?: ReactNode;
   className?: string;
+  /** The landing-page preview renders this as a <p>, so the home page keeps a single <h1>. */
+  as?: "h1" | "h2" | "p";
 }) {
   return (
     <div className={cn("flex flex-col gap-3 @2xl:flex-row @2xl:items-end @2xl:justify-between", className)}>
       <div className="min-w-0">
-        <h1 className="type-display text-[22px] font-semibold leading-tight">{title}</h1>
+        <Heading className="type-display text-[22px] font-semibold leading-tight">{title}</Heading>
         {description && <p className="mt-1 text-[13px] text-muted-foreground">{description}</p>}
       </div>
       {actions && <div className="flex shrink-0 flex-wrap items-center gap-2">{actions}</div>}

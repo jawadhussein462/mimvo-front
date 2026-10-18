@@ -3,8 +3,14 @@ const repo = "https://github.com/jawadhussein462/mimvo";
 export const site = {
   name: "Mimvo",
   tagline: "Security scanner for AI agent memory.",
+  /** Default <title>: brand plus the category people search for. */
+  title: "Mimvo · Security scanner for AI agent memory",
+  /**
+   * Home page meta description and default for social previews. Kept under ~155 characters so Google
+   * shows it whole, with the category and the stores people search for up front.
+   */
   description:
-    "Scan your AI agent's long-term memory for poisoned facts, hidden instructions, and leaked secrets. Open source, read-only, offline by default.",
+    "Open-source security scanner for AI agent memory. Find poisoned facts, prompt injections and leaked secrets in Chroma, Qdrant, pgvector, Pinecone and mem0.",
   url: "https://mimvo.dev",
   github: repo,
   /** "Try open source" lands on the docs, and the docs lead to GitHub (the promptfoo pattern). */

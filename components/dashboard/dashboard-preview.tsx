@@ -35,6 +35,7 @@ export function DashboardPreview({ width = 1280, height = 880 }: { width?: numbe
         <TopBar workspace={scan.workspace} source={sourceLabel(scan)} scanning={false} preview />
         <div className="space-y-4 px-6 py-6">
           <PageHeading
+            as="p"
             title="Overview"
             description={
               <>

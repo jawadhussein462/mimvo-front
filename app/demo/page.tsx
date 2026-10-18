@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { GitHubIcon } from "@/components/brand/github-icon";
@@ -9,11 +10,12 @@ import { SiteHeader } from "@/components/landing/site-header";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Book a demo",
-  description: "See Mimvo scan AI agent memory like yours, and plan detectors, CI gating and guards with the team.",
-  alternates: { canonical: "/demo" },
-};
+  description:
+    "See Mimvo scan AI agent memory like yours, and plan detectors, CI gating and write guards with the team. A 30-minute call.",
+  path: "/demo",
+});
 
 const AGENDA = [
   {
